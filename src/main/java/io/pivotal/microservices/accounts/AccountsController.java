@@ -44,6 +44,8 @@ public class AccountsController {
 	 * @return The account if found.
 	 * @throws AccountNotFoundException
 	 *             If the number is not recognised.
+	 * @api {get} /accounts/{accountNumber} account by account's number
+ 	 * @apiName accountByNumber
 	 */
 	@RequestMapping("/accounts/{accountNumber}")
 	public Account byNumber(@PathVariable("accountNumber") String accountNumber) {
@@ -68,6 +70,8 @@ public class AccountsController {
 	 * @return A non-null, non-empty set of accounts.
 	 * @throws AccountNotFoundException
 	 *             If there are no matches at all.
+	 * @api {get} /accounts/owner/{ownerName} account by owner name
+ 	 * @apiName accountByNumber
 	 */
 	@RequestMapping("/accounts/owner/{name}")
 	public List<Account> byOwner(@PathVariable("name") String partialName) {
