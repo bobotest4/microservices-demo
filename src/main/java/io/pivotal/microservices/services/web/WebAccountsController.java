@@ -40,11 +40,19 @@ public class WebAccountsController {
 		binder.setAllowedFields("accountNumber", "searchText");
 	}
 
+	/**
+	* @api {get} /accounts returns index.html
+ 	* @apiName Accounts index page
+ 	*/
 	@RequestMapping("/accounts")
 	public String goHome() {
 		return "index";
 	}
 
+	/**
+	* @api {get} /accounts/accountNumber returns accounts page
+ 	* @apiName Accounts html page
+ 	*/
 	@RequestMapping("/accounts/{accountNumber}")
 	public String byNumber(Model model,
 			@PathVariable("accountNumber") String accountNumber) {
